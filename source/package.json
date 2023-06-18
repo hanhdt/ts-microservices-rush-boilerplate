@@ -1,0 +1,17 @@
+{
+  "name": "ts-microservices-rush-boilerplate",
+  "author": "Hanh Tran",
+  "scripts": {},
+  "engines": {
+    "node": "=16",
+    "pnpm": "=6"
+  },
+  "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "rush lint",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
+}
