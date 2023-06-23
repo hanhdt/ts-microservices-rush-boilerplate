@@ -26,9 +26,6 @@ export class CanframesRestApiStack extends Stack {
       sortKey: { name: 'year', type: ddb.AttributeType.STRING },
       removalPolicy: RemovalPolicy.DESTROY
     })
-  
-    // defines Rest API gateway with one CRUD methods
-    this.restAPI = new RestApi(this, 'CanframeAPI');
 
     const getCanframesCode = new TypeScriptCode('src/getCanframesHandler.ts', {
       buildOptions: {
@@ -37,6 +34,7 @@ export class CanframesRestApiStack extends Stack {
         external: ['aws-sdk'],
       },
     });
+
     const getCanframeCode = new TypeScriptCode('src/getCanframeHandler.ts', {
       buildOptions: {
         bundle: true,
@@ -44,6 +42,7 @@ export class CanframesRestApiStack extends Stack {
         external: ['aws-sdk'],
       }
     });
+
     const createCanframeCode = new TypeScriptCode('src/createCanframeHandler.ts', {
       buildOptions: {
         bundle: true,
@@ -51,6 +50,7 @@ export class CanframesRestApiStack extends Stack {
         external: ['aws-sdk'],
       }
     });
+
     const updateCanframeCode = new TypeScriptCode('src/updateCanframeHandler.ts', {
       buildOptions: {
         bundle: true,
@@ -58,6 +58,7 @@ export class CanframesRestApiStack extends Stack {
         external: ['aws-sdk'],
       }
     });
+
     const deleteCanframeCode = new TypeScriptCode('src/deleteCanframeHandler.ts', {
       buildOptions: {
         bundle: true,
@@ -67,7 +68,7 @@ export class CanframesRestApiStack extends Stack {
     });
 
     this.getCanframesFunction = new Function(this, 'getCanframes', {
-      functionName: `${buildConfig.Solution}-${buildConfig.Environment}-${buildConfig.App}-getCanframes`,
+      functionName: `${buildConfig.Solution}-${buildConfig.App}-getCanframes-${buildConfig.Environment}`,
       runtime: Runtime.NODEJS_16_X,
       code: getCanframesCode,
       handler: 'getCanframesHandler.handler',
@@ -80,7 +81,7 @@ export class CanframesRestApiStack extends Stack {
     });
 
     this.getCanframeFunction = new Function(this, 'getCanframe', {
-      functionName: `${buildConfig.Solution}-${buildConfig.Environment}-${buildConfig.App}-getCanframe`,
+      functionName: `${buildConfig.Solution}-${buildConfig.App}-getCanframe-${buildConfig.Environment}`,
       runtime: Runtime.NODEJS_16_X,
       code: getCanframeCode,
       handler: 'getCanframeHandler.handler',
@@ -93,7 +94,7 @@ export class CanframesRestApiStack extends Stack {
     });
 
     this.createCanframeFunction = new Function(this, 'createCanframe', {
-      functionName: `${buildConfig.Solution}-${buildConfig.Environment}-${buildConfig.App}-createCanframe`,
+      functionName: `${buildConfig.Solution}-${buildConfig.App}-createCanframe-${buildConfig.Environment}`,
       runtime: Runtime.NODEJS_16_X,
       code: createCanframeCode,
       handler: 'createCanframeHandler.handler',
@@ -106,7 +107,7 @@ export class CanframesRestApiStack extends Stack {
     });
     
     this.updateCanframeFunction = new Function(this, 'updateCanframe', {
-      functionName: `${buildConfig.Solution}-${buildConfig.Environment}-${buildConfig.App}-updateCanframe`,
+      functionName: `${buildConfig.Solution}-${buildConfig.App}-updateCanframe-${buildConfig.Environment}`,
       runtime: Runtime.NODEJS_16_X,
       code: updateCanframeCode,
       handler: 'updateCanframeHandler.handler',
@@ -119,7 +120,7 @@ export class CanframesRestApiStack extends Stack {
     });
 
     this.deleteCanframeFunction = new Function(this, 'deleteCanframe', {
-      functionName: `${buildConfig.Solution}-${buildConfig.Environment}-${buildConfig.App}-deleteCanframe`,
+      functionName: `${buildConfig.Solution}-${buildConfig.App}-deleteCanframe-${buildConfig.Environment}`,
       runtime: Runtime.NODEJS_16_X,
       code: deleteCanframeCode,
       handler: 'deleteCanframeHandler.handler',
@@ -129,6 +130,11 @@ export class CanframesRestApiStack extends Stack {
         LOG_LEVEL: buildConfig.Parameters.LogLevel,
         DYNAMODB_TABLE_CANFRAMES: buildConfig.Parameters.CanframesTableName,
       }
+    });
+
+    // defines Rest API gateway with one CRUD methods
+    this.restAPI = new RestApi(this, 'CanframeAPI', {
+      restApiName: `${buildConfig.Solution}-${buildConfig.App}-CanframeAPI-${buildConfig.Environment}`,
     });
 
     this.canframesResource = this.restAPI.root.addResource('canframes');

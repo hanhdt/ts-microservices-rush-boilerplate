@@ -50,7 +50,7 @@ async function main() {
   const buildConfig: BuildConfig = getConfig();
 
   const serviceName = name.replace('@', '').replace('/', '-');
-  const canframesRestApiStackName = `${buildConfig.Environment}-${buildConfig.Solution}-${buildConfig.App}-${serviceName}-stack`;
+  const canframesRestApiStackName = `${buildConfig.Solution}-${buildConfig.App}-${serviceName}-stack-${buildConfig.Environment}`;
 
   cdk.Tags.of(app).add('App', `${buildConfig.Solution}-${buildConfig.App}`);
   cdk.Tags.of(app).add('Environment', buildConfig.Environment);
