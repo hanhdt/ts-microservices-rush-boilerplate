@@ -1,6 +1,6 @@
 {
   "name": "ts-microservices-rush-boilerplate",
-  "author": "Hanh Tran",
+  "author": "Hanh Tran <tranduchanh.ms@gmail.com>",
   "scripts": {},
   "engines": {
     "node": "=16",

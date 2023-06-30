@@ -1,8 +1,8 @@
 # Boilerplate CHANGELOG.md
 
-## [Unreleased] - 2023-04-25
+## 1.0.0
 
-### Added
+### Notes
 
 - [X] Docs: add CHANGELOG.md
 - [X] Docs: What to do after cloned the boilerplate
@@ -16,5 +16,6 @@
 - [X] Fix: cdk deploy can set env parameters
 - [X] Create CDK custom template
 - [X] Test: add integration test using Cucumber.js
-- [X] Utility: add destroy infrastructure script
+- [X] Feat: add destroy stacks script
 - [X] Test: add code coverage report using Jest
+- [X] Feat: add build stacks script and publish packages to npm registry
