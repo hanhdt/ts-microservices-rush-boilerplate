@@ -19,3 +19,4 @@
 - [X] Feat: add destroy stacks script
 - [X] Test: add code coverage report using Jest
 - [X] Feat: add build stacks script and publish packages to npm registry
+- [X] Util: managing environment variables of business service

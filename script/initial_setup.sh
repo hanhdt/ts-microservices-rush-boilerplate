@@ -1,12 +1,12 @@
 #!/bin/sh
 
 # Configuration File Path
-export APP_CONFIG=$1
+export GLOBAL_APP_CONFIG=$1
 
-export AWS_ACCOUNT=$(cat $APP_CONFIG | jq -r '.AWSAccountID') #ex> 123456789123
-export AWS_REGION=$(cat $APP_CONFIG | jq -r '.AWSProfileRegion') #ex> us-east-1
-export AWS_PROFILE=$(cat $APP_CONFIG | jq -r '.AWSProfileName') #ex> cdk-demo
-export CDK_QUALIFIER=$(cat $APP_CONFIG | jq -r '.QualifierCustom') #ex> hnb659fds
+export AWS_ACCOUNT=$(cat $GLOBAL_APP_CONFIG | jq -r '.AWSAccountID') #ex> 123456789123
+export AWS_REGION=$(cat $GLOBAL_APP_CONFIG | jq -r '.AWSProfileRegion') #ex> us-east-1
+export AWS_PROFILE=$(cat $GLOBAL_APP_CONFIG | jq -r '.AWSProfileName') #ex> cdk-demo
+export CDK_QUALIFIER=$(cat $GLOBAL_APP_CONFIG | jq -r '.QualifierCustom') #ex> hnb659fds
 
 currntPWD=`pwd`
 cd ${currntPWD}/source/
@@ -23,7 +23,7 @@ git --version
 jq --version
 
 echo ==--------ConfigInfo---------==
-echo $APP_CONFIG
+echo $GLOBAL_APP_CONFIG
 echo $AWS_ACCOUNT
 echo $AWS_REGION
 echo $AWS_PROFILE

@@ -9,10 +9,7 @@
 
   "Version": "0.0.1",
   "Build": "0",
+  "QualifierCustom": "hnb659fds",
 
-  "LogLevel": "INFO",
-  "LambdaInsightsLayer": "",
-  "ExternalApiUrl": "",
-
-  "QualifierCustom": "hnb659fds"
+  "LogLevel": "info"
 }

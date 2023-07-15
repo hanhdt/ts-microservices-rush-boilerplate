@@ -49,7 +49,8 @@
     "typescript": "~4.9.5"
   },
   "dependencies": {
-    "@cdf/logger": "^4.0.0",
+    "@hanhdt/logger": "^4.0.0",
+    "@hanhdt/config-inject": "^4.0.2",
     "aws-cdk-lib": "2.73.0",
     "constructs": "^10.0.0",
     "ow": "0.23.0",

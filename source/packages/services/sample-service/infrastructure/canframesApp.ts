@@ -1,15 +1,20 @@
 #!/usr/bin/env node
 import * as cdk from 'aws-cdk-lib';
+import path from 'path';
+import '@hanhdt/config-inject';
 import { CanframesRestApiStack } from './canframesRestApiStack';
 import { BuildConfig } from './buildConfig';
-import path from 'path';
 import { name } from '../package.json';
 
 const app = new cdk.App();
 
 function ensureString(object: { [name: string]: any }, propName: string): string {
+  if (process.env[propName]) {
+    return process.env[propName] || '';
+  }
+
   if (!object[propName] || object[propName].trim().length === 0) {
-    process.emitWarning(`${propName} does not exist or is empty`);
+    process.emitWarning(`${propName} does not exist or is empty globally`);
   }
 
   return object[propName];

@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Configuration File Path
-export APP_CONFIG=$1
+export GLOBAL_APP_CONFIG=$1
 export SERVICE_NAME=$2
-export SOLUTION_NAME=$(cat $APP_CONFIG | jq -r '.Solution')
-export APP_NAME=$(cat $APP_CONFIG | jq -r '.App')
-export PROJECT_STAGE=$(cat $APP_CONFIG | jq -r '.Environment') #ex> development
+export SOLUTION_NAME=$(cat $GLOBAL_APP_CONFIG | jq -r '.Solution')
+export APP_NAME=$(cat $GLOBAL_APP_CONFIG | jq -r '.App')
+export PROJECT_STAGE=$(cat $GLOBAL_APP_CONFIG | jq -r '.Environment') #ex> development
 
 echo ==--------ConfigInfo---------==
-echo "$APP_CONFIG"
+echo "$GLOBAL_APP_CONFIG"
 echo "Profile: $AWS_PROFILE"
 echo "Env: $PROJECT_STAGE"
 echo "Solution: $SOLUTION_NAME"

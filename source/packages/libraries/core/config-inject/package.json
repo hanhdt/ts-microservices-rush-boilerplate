@@ -1,21 +1,20 @@
 {
-  "name": "@hanhdt/logger",
-  "description": "Common logging capability for platform.",
-  "version": "4.0.0",
+  "name": "@hanhdt/config-inject",
+  "version": "4.0.2",
+  "description": "this library load config from files and inject it into process.env to make it accessible as environment variables",
   "author": "Hanh D. Tran <tranduchanh.ms@gmail.com>",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "clean": "npx shx rm -rf dist tsconfig.tsbuildinfo bundle.zip .rush .nyc_output *.log",
+    "clean": "npx shx rm -rf dist deploy tsconfig.tsbuildinfo bundle.zip .rush .nyc_output *.log",
     "lint": "npx eslint . --ext '.ts'",
     "build": "npx tsc -b",
-    "test": "rushx lint && jest --silent --passWithNoTests"
+    "test": "rushx lint && APP_CONFIG_DIR='config' jest --silent --passWithNoTests"
   },
   "dependencies": {
-    "logform": "2.2.0",
-    "readable-stream": "3.6.0",
-    "winston": "3.3.3",
-    "winston-transport": "4.4.0"
+    "@hanhdt/logger": "^4.0.0",
+    "dotenv-flow": "~3.2.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@rushstack/eslint-config": "2.3.4",
@@ -32,11 +31,12 @@
     "jest-resolve": "26.6.2",
     "jest": "26.6.3",
     "ts-jest": "26.5.6",
-    "typescript": "4.2.4"
+    "typescript": "4.2.4",
+    "@types/node": "16.11.7",
+    "@types/dotenv-flow": "~3.2.0"
   },
   "jest": {
-    "globals": {
-               },
+    "globals": {},
     "roots": [
       "<rootDir>/src"
     ],
@@ -55,6 +55,5 @@
       "node"
     ]
   },
-  "license": "ISC",
-  "private": true
+  "license": "ISC"
 }

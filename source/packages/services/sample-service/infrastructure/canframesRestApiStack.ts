@@ -20,8 +20,9 @@ export class CanframesRestApiStack extends Stack {
     super(scope, id, props);
   
     // crate a dynamodb table
+    const canframesTableName = buildConfig.Parameters.CanframesTableName;
     const canframesTable = new ddb.Table(this, 'CanframesApiTable', {
-      tableName: buildConfig.Parameters.CanframesTableName,
+      tableName: canframesTableName,
       partitionKey: { name: 'id', type: ddb.AttributeType.STRING },
       sortKey: { name: 'year', type: ddb.AttributeType.STRING },
       removalPolicy: RemovalPolicy.DESTROY

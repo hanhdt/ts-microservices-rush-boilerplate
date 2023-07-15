@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Configuration File Path
-export APP_CONFIG=$1
-export PROJECT_STAGE=$(cat $APP_CONFIG | jq -r '.Environment') #ex> development
-export SOLUTION_NAME=$(cat $APP_CONFIG | jq -r '.Solution')
-export APP_NAME=$(cat $APP_CONFIG | jq -r '.App')
+export GLOBAL_APP_CONFIG=$1
+export PROJECT_STAGE=$(cat $GLOBAL_APP_CONFIG | jq -r '.Environment') #ex> development
+export SOLUTION_NAME=$(cat $GLOBAL_APP_CONFIG | jq -r '.Solution')
+export APP_NAME=$(cat $GLOBAL_APP_CONFIG | jq -r '.App')
 
 currntPWD=`pwd`
 cd ${currntPWD}/source/
@@ -21,7 +21,7 @@ git --version
 jq --version
 
 echo ==--------ConfigInfo---------==
-echo $APP_CONFIG
+echo $GLOBAL_APP_CONFIG
 echo $AWS_PROFILE
 echo $PROJECT_STAGE
 echo $SOLUTION_NAME
