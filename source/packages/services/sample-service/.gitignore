@@ -11,6 +11,9 @@ cdk.out
 # Coverage directory used by tools like istanbul
 coverage
 .nyc_output
+.env.*
+.env
 
 !jest.config.js
 !cucumber.js
+!.env.sample
