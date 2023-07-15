@@ -1,4 +1,4 @@
-import { CDFLogger } from '@cdf/logger/src/index';
+import { CDFLogger } from '@hanhdt/logger';
 
 const LOG_LEVEL = process.env.LOG_LEVEL || 'info';
 
