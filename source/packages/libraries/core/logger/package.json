@@ -1,8 +1,8 @@
 {
   "name": "@hanhdt/logger",
   "description": "Common logging capability for platform.",
-  "version": "4.0.0",
-  "author": "Hanh D. Tran <tranduchanh.ms@gmail.com>",
+  "version": "1.0.0",
+  "author": "Hanh Tran <tranduchanh.ms@gmail.com>",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,10 +12,10 @@
     "test": "rushx lint && jest --silent --passWithNoTests"
   },
   "dependencies": {
-    "logform": "2.2.0",
-    "readable-stream": "3.6.0",
-    "winston": "3.3.3",
-    "winston-transport": "4.4.0"
+    "logform": "^2.2.0",
+    "readable-stream": "^3.6.0",
+    "winston": "^3.3.3",
+    "winston-transport": "^4.4.0"
   },
   "devDependencies": {
     "@rushstack/eslint-config": "2.3.4",

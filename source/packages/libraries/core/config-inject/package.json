@@ -1,8 +1,8 @@
 {
   "name": "@hanhdt/config-inject",
-  "version": "4.0.2",
-  "description": "this library load config from files and inject it into process.env to make it accessible as environment variables",
-  "author": "Hanh D. Tran <tranduchanh.ms@gmail.com>",
+  "version": "1.0.0",
+  "description": "This library load config from files and inject it into process.env to make it accessible as environment variables",
+  "author": "Hanh Tran <tranduchanh.ms@gmail.com>",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "scripts": {
@@ -12,8 +12,8 @@
     "test": "rushx lint && APP_CONFIG_DIR='config' jest --silent --passWithNoTests"
   },
   "dependencies": {
-    "@hanhdt/logger": "^4.0.0",
-    "dotenv-flow": "~3.2.0",
+    "@hanhdt/logger": "^1.0.0",
+    "dotenv-flow": "^3.2.0",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {

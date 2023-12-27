@@ -26,12 +26,12 @@
     "strictPeerDependencies": false,
     "preventManualShrinkwrapChanges": true
   },
-  "nodeSupportedVersionRange": ">=16.0.0 <17.0.0",
+  "nodeSupportedVersionRange": ">=16.0.0 <20.0.0",
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 4,
   "gitPolicy": {},
   "repository": {
-    "url": "https://github.com/tensoriot-jp/ts-monorepo-microservices-boilerplate",
+    "url": "https://github.com/hanhdt/ts-microservices-rush-boilerplate.git",
     "defaultBranch": "develop",
     "defaultRemote": "origin"
   },

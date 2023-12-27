@@ -86,11 +86,23 @@ Read more details about adding Rush configuration at `script/README.md`
 
 - see source/package/services/sample-service/README.md
 
-## Appendix
+## Appendixes
 
 ### Fix error: "SSM parameter /cdk-bootstrap/hnb659fds/version not found" in the Step 7
 
 ```bash
   $cd source/packages/services/<appName>
   $cdk deploy --no-previous-parameters -c config=dev
+```
+
+### Create local configuration file
+
+The `.env` file will be placed at the service folder.
+And it is scoped to the service.
+
+You can put `.env` file in the `source/packages/services/<ServiceName>/config` folder.
+
+```bash
+  $cd source/packages/services/<ServiceName>/config
+  $touch .env
 ```

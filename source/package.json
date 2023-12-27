@@ -1,9 +1,9 @@
 {
   "name": "ts-microservices-rush-boilerplate",
-  "author": "Hanh Tran <tranduchanh.ms@gmail.com>",
+  "author": "Hanh Tran<tranduchanh.ms@gmail.com>",
   "scripts": {},
   "engines": {
-    "node": "=16",
+    "node": "=18",
     "pnpm": "=6"
   },
   "private": true,
